@@ -26,7 +26,7 @@ export class StarmarkEmployeeService {
                             state: employee.address.state,
                             dob: employee.dob,
                             avatar: employee.avatar,
-                            tags: employee.tags
+                            tags: tags: Array.from((new Set(employee.tags)))
                         });
                     });
                     return directory;
