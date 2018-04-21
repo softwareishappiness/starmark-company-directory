@@ -1,0 +1,33 @@
+<form #directoryForm="ngForm">
+
+    <div class="row filter">
+      <div class="col-md-4">
+        <select id="city" class="form-control" [(ngModel)]="selectedCity" [ngModelOptions]="{standalone: true}">
+          <option value="*">Filter by City...</option>
+          <option *ngFor="let city of cities; let c = index">{{ city }}</option>
+        </select>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <div *ngFor="let letter of letters">
+
+        <div class="row" *ngIf="showLetter(letter, selectedCity)">
+            <div class="col-md-12">
+                <h6>{{letter}}</h6>
+            </div>
+        </div>
+
+        <div class="row" *ngFor="let employee of employees | city: selectedCity | alpha: letter | pairs">
+          <div class="col-md-6">
+            <app-starmark-employee *ngIf="employee[0]" [profile]="employee[0]"></app-starmark-employee>
+          </div>
+          <div class="col-md-6">
+            <app-starmark-employee *ngIf="employee[1]" [profile]="employee[1]"></app-starmark-employee>
+          </div>
+        </div>
+
+    </div>
+
+</form>

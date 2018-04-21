@@ -1,0 +1,19 @@
+.avatar {
+    border-radius: 50%;
+}
+.label {
+    font-weight: bolder;
+}
+.profile {
+    padding: 10px;
+}
+.card {
+    margin-left: 5px;
+}
+.info {
+    padding: 10px;
+}
+.selected {
+    background-color: lightyellow;
+}
+

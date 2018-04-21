@@ -1,0 +1,19 @@
+<div class="row profile" (mouseenter)="expand($event)" (mouseleave)="collapse($event)">
+    <div class="col-md-12 card" [class.selected]="expanded === true">
+        <div class="row info">
+            <div class="col-md-4">
+                <img class="avatar" src="{{profile.avatar}}" alt="{{profile.lastName}}, {{profile.firstName}}" />
+            </div>
+            <div class="col-md-8">
+                <h4>{{profile.lastName}}, {{profile.firstName}}</h4>
+                <div><span class="label">Phone:</span> <a href="tel:{{profile.phone}}">{{profile.phone}}</a></div>
+                <div><span class="label">Email:</span> <a href="mailto:{{profile.email}}">{{profile.email}}</a></div>
+                <div><span class="label">Location:</span>  <a target="location" href="https://www.google.com/maps/place/{{profile.city}},+{{profile.state}}">{{profile.city}}, {{profile.state}}</a></div>
+                <div *ngIf="expanded">
+                    <div><span class="label">Born:</span> {{profile.dob | date: 'MMMM d, yyyy'}}</div>
+                    <div><span class="label">Tags:</span> {{profile.tags}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
