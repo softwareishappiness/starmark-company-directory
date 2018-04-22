@@ -9,6 +9,7 @@
 }
 .card {
     margin-left: 5px;
+    background-color: lightcyan;
 }
 .info {
     padding: 10px;
